@@ -30,6 +30,15 @@ git submodule update --init --recursive
 
 ## Prerequisites
 
+Yocto has the following minimum requirements (see
+https://www.yoctoproject.org/docs/1.8/yocto-project-qs/yocto-project-qs.html#the-linux-distro):
+
+- Linux (Ubuntu, Debian, and others)
+- 50 GB disk space (100 GB recommended)
+- Git 1.7.8 or greater
+- tar 1.24 or greater
+- Python 2.7.4 or greater (Python 3.x not supported)
+
 Before starting the Yocto build, you must install the following requirements:
 
 - Yocto host dependencies (see
