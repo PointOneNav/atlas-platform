@@ -1,7 +1,7 @@
 deviceTypesCommon = require '@resin.io/device-types/common'
 { networkOptions, commonImg, instructions } = deviceTypesCommon
  
-IMX8M_VAR_DART_FLASH = 'Set the SW7 BOOT SELECT switch to EXT. Insert SD CARD. Power up the <%= TYPE_NAME %>.'
+IMX8M_VAR_DART_FLASH = 'Set the SW7 BOOT SELECT switch to EXT. Insert SD CARD and then power up the <%= TYPE_NAME %>.'
 IMX8M_VAR_DART_POST_FLASH = 'Set the SW7 BOOT SELECT switch to INT.'
  
 postProvisioningInstructions = [
@@ -13,8 +13,8 @@ postProvisioningInstructions = [
  
 module.exports =
         version: 1
-        slug: 'imx8mm-var-dart'
-        name: 'Variscite DART-MX8M Mini'
+        slug: 'imx8mm-var-dart-plt'
+        name: 'Variscite DART-MX8M Mini PLT'
         arch: 'aarch64'
         state: 'new'
         private: false
@@ -37,11 +37,11 @@ module.exports =
         supportsBlink: false
 
         yocto:
-                machine: 'imx8mm-var-dart'
+                machine: 'imx8mm-var-dart-plt'
                 image: 'resin-image-flasher'
                 fstype: 'resinos-img'
                 version: 'yocto-sumo'
-                deployArtifact: 'resin-image-flasher-imx8mm-var-dart.resinos-img'
+                deployArtifact: 'resin-image-flasher-imx8mm-var-dart-plt.resinos-img'
                 compressed: true
 
         options: [ networkOptions.group ]
