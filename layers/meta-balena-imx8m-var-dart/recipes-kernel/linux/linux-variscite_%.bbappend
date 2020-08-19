@@ -14,6 +14,13 @@ RESIN_CONFIGS[imx-sdma] = " \
 		CONFIG_IMX_SDMA=m \
 "
 
+RESIN_CONFIGS_append_imx8mm-var-dart-plt = " laird"
+RESIN_CONFIGS[laird] = " \
+		CONFIG_CFG80211=n \
+		CONFIG_MAC80211=n \
+		CONFIG_BT=n \
+"
+
 # For plain imx8m-var-dart we'll stay at kernel 4.14.78
 # because there's no ubuntu release for 4.14.98, and
 # we want to preserve compatiblity for GPU access from container
@@ -23,29 +30,19 @@ SRC_URI_append_imx8m-var-dart = " \
 	file://0001-fsl-imx8mq-var-dart-common.dtsi-Add-spidev-support.patch \
 "
 
-SRC_URI_append = " \
-	file://0002-NFLX-2019-001-SACK-Panic.patch \
-	file://0003-NFLX-2019-001-SACK-Panic-for-lteq-4.14.patch \
-	file://0004-NFLX-2019-001-SACK-Slowness.patch \
-	file://0005-NFLX-2019-001-Resour-Consump-Low-MSS.patch \
-	file://0006-NFLX-2019-001-Resour-Consump-Low-MSS.patch \
-"
-
 SRC_URI_append_imx8mm-var-dart = " \
 	file://mx8mm-fsl-imx8mm-var-dart-Enable-SPIDEV.patch \
 "
-
-SRC_URI_remove_imx8mm-var-dart-nrt = "file://0002-NFLX-2019-001-SACK-Panic.patch"
-SRC_URI_remove_imx8mm-var-dart-nrt = "file://0003-NFLX-2019-001-SACK-Panic-for-lteq-4.14.patch"
-SRC_URI_remove_imx8mm-var-dart-nrt = "file://0004-NFLX-2019-001-SACK-Slowness.patch"
-SRC_URI_remove_imx8mm-var-dart-nrt = "file://0005-NFLX-2019-001-Resour-Consump-Low-MSS.patch"
-SRC_URI_remove_imx8mm-var-dart-nrt = "file://0006-NFLX-2019-001-Resour-Consump-Low-MSS.patch"
 
 SRC_URI_append_imx8mm-var-dart-nrt = " \
 	file://0001-imx8mm-var-dart-nrt-pinmux.patch \
 	file://0007-mmc-core-Disable-CQE.patch \
 	file://0008-dts-fsl-imx8mm-var-dart-Disable-GPU.patch \
 	file://0009-Port-RT-changes-4.19.31-rt18.patch \
+"
+
+SRC_URI_append_imx8mm-var-dart-plt = " \
+	file://0007-mmc-core-Disable-CQE.patch \
 "
 
 RESIN_CONFIGS_append_imx8mm-var-dart-nrt = " preempt_rt"
